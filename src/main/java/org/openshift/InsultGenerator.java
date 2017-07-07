@@ -14,7 +14,7 @@ public class InsultGenerator {
 		String theInsult = "";
 		try
 		{
-        String databaseURL = "jdbc;postgresql://";
+        String databaseURL = "jdbc:postgresql://";
         databaseURL += System.getenv("POSTGRESQL_SERVICE_HOST");
         databaseURL += System.getenv("POSTGRESQL_DATABASE");
         
@@ -39,7 +39,7 @@ public class InsultGenerator {
 		}
 		catch (Exception e)
 		{
-        return "Database connection problem!";
+        return "Database connection problem!  " + e.getMessage();
 		}
 		return theInsult;
 		
